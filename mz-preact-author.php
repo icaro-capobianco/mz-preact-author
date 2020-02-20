@@ -49,7 +49,8 @@ function enqueue_assets() {
 }
 function insert_author_box( $content ) {
 	if ( \is_singular() ) {
-		$content .= '<div id="preact-author" ></div>';
+		$post_id  = \get_the_ID();
+		$content .= '<div data-id=' . $post_id . ' id="preact-author" ></div>';
 	}
 	return $content;
 }
