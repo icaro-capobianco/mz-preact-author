@@ -9,7 +9,7 @@
     ],
     "scripts":{
         "post-install-cmd": [
-            "./vendor/bin/phpcs --config-set installed_paths wpcs/"
+            "phpcs --config-set installed_paths wpcs/"
         ]
     },
     "require": {
