@@ -647,10 +647,10 @@
             return e.__proto__ = t, e
         })(e, t)
     }
-    var J = window.preactAuthorJSL10n["preact-author"].locale_data.messages;
-    !1 === J ? wp.i18n.setLocaleData({
-        "": {}
-    }, "preact-author") : wp.i18n.setLocaleData(J, "preact-author");
+    // var J = window.preactAuthorJSL10n["preact-author"].locale_data.messages;
+    // !1 === J ? wp.i18n.setLocaleData({
+    //     "": {}
+    // }, "preact-author") : wp.i18n.setLocaleData(J, "preact-author");
     var V = function (e) {
         function t(e) {
             return function (e, t) {
