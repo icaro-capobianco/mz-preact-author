@@ -1,4 +1,11 @@
 <?php
+/**
+ * Plugin Name: Marzee Labs
+ * Plugin URI:
+ * Description: Marzee Labs tech challenge
+ * Version: 1.0
+ * Author: Ícaro C. Capobianco
+ */
 
 namespace MZ\WP\Plugin\Challenge2020;
 
@@ -31,9 +38,9 @@ function enqueue_style( $name, $deps = [] ) {
 }
 
 function install() {
-	\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . 'enqueue_assets' );
-	\add_filter( 'the_content', __NAMESPACE__ . 'insert_author_box' );
-	\add_action( 'rest_api_init', __NAMESPACE__ . 'register_author_route' );
+	\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
+	\add_filter( 'the_content', __NAMESPACE__ . '\insert_author_box' );
+	\add_action( 'rest_api_init', __NAMESPACE__ . '\register_author_route' );
 }
 
 function enqueue_assets() {
@@ -51,10 +58,16 @@ function register_author_route() {
 	$endpoint  = '/author/(?P<id>[\d]+)';
 	$args = [
 		'methods'  => 'GET',
-		'callback' => __NAMESPACE__ . 'preact_author_rest_callback',
+		'callback' => __NAMESPACE__ . '\preact_author_rest_callback',
 	];
 	register_rest_route( $namespace, $endpoint, $args );
 }
 function preact_author_rest_callback( $request ) {
-	$post_id = $request->getParam( 'id' );
+	return [
+		'name' => 'Jon Doe',
+		'bio'  => 'Foo',
+		'link' => 'https://www.rickrolled.com/get-rolled',
+	];
 }
+
+install();
