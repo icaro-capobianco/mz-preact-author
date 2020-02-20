@@ -44,7 +44,8 @@ function install() {
 }
 
 function enqueue_assets() {
-	enqueue_script( 'main' );
+	enqueue_script( 'main', [ 'wp-i18n' ] );
+	\wp_localize_script( PREFIX . '-main', 'MZPA_SITE_URL', \site_url() );
 	enqueue_style( 'style' );
 }
 function insert_author_box( $content ) {
