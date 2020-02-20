@@ -1,0 +1,13 @@
+{
+    "name": "icaro/mz-preact-author",
+    "description": "Marzee Labs tech challenge",
+    "authors": [
+        {
+            "name": "Icaro C. Capobianco",
+            "email": "icaro.capobianco@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    }
+}
