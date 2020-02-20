@@ -26,13 +26,13 @@ function style_url( $name ) {
 }
 function enqueue_script( $name, $deps = [], $in_footer = true ) {
 	$src    = script_url( $name );
-	$handle = PREFIX . $name;
+	$handle = PREFIX . '-' . $name;
 	$ver    = VERSION;
 	\wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer );
 }
 function enqueue_style( $name, $deps = [] ) {
 	$src    = style_url( $name );
-	$handle = PREFIX . $name;
+	$handle = PREFIX . '-' . $name;
 	$ver    = VERSION;
 	\wp_enqueue_style( $handle, $src, $deps, $ver );
 }
