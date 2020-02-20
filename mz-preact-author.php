@@ -44,12 +44,15 @@ function install() {
 }
 
 function enqueue_assets() {
+	if ( ! \is_single() ) {
+		return;
+	}
 	enqueue_script( 'main', [ 'wp-i18n' ] );
 	\wp_localize_script( PREFIX . '-main', 'MZPA_SITE_URL', \site_url() );
 	enqueue_style( 'style' );
 }
 function insert_author_box( $content ) {
-	if ( \is_singular() ) {
+	if ( \is_single() ) {
 		$post_id  = \get_the_ID();
 		$content .= '<div data-id=' . $post_id . ' id="preact-author" ></div>';
 	}
