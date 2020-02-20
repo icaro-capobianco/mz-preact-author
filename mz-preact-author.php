@@ -69,8 +69,8 @@ function register_author_route() {
 }
 function preact_author_rest_callback( $request ) {
 	return [
-		'name' => 'Jon Doe',
-		'bio'  => 'Foo',
+		'name' => 'John Doe',
+		'bio'  => 'The names "John Doe" or "John Roe" for men, "Jane Doe" or "Jane Roe" for women, or "Johnnie Doe" and "Janie Doe" for children, or just "Doe" non-gender-specifically are used as placeholder names.',
 		'link' => 'https://www.rickrolled.com/get-rolled',
 	];
 }
