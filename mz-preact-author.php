@@ -12,10 +12,10 @@ function url() {
 	return \plugin_dir_url( __FILE__ );
 }
 function script_url( $name ) {
-	return url() . $name . '.js';
+	return url() . 'assets/js/' . $name . '.js';
 }
 function style_url( $name ) {
-	return url() . $name . '.css';
+	return url() . 'assets/css/' . $name . '.css';
 }
 function enqueue_script( $name, $deps = [], $in_footer = true ) {
 	$src    = script_url( $name );
@@ -28,4 +28,13 @@ function enqueue_style( $name, $deps = [] ) {
 	$handle = PREFIX . $name;
 	$ver    = VERSION;
 	\wp_enqueue_style( $handle, $src, $deps, $ver );
+}
+
+function install() {
+	add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
+}
+
+function enqueue_assets() {
+	enqueue_script( 'main' );
+	enqueue_style( 'style' );
 }
