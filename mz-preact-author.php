@@ -32,9 +32,17 @@ function enqueue_style( $name, $deps = [] ) {
 
 function install() {
 	add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
+	add_filter( 'the_content', 'insert_author_box' );
 }
 
 function enqueue_assets() {
 	enqueue_script( 'main' );
 	enqueue_style( 'style' );
+}
+
+function insert_author_box( $content ) {
+	if ( \is_singular() ) {
+		$content .= '<div id="preact-author" ></div>';
+	}
+	return $content;
 }
