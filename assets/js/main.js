@@ -739,7 +739,7 @@
                 key: "getAuthor",
                 value: function () {
                     var e = this;
-                    fetch("/wp-json/preact-author/v1/author?id=" + this.props.id).then((function (e) {
+                    fetch( MZPA_SITE_URL + "/wp-json/preact-author/v1/author?id=" + this.props.id).then((function (e) {
                         return e.json()
                     })).then((function (t) {
                         e.setState({
