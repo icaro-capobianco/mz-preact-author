@@ -61,7 +61,7 @@ function insert_author_box( $content ) {
 function register_author_route() {
 	$namespace = 'preact-author/v1';
 	$endpoint  = '/author';
-	$args = [
+	$args      = [
 		'methods'  => 'GET',
 		'callback' => __NAMESPACE__ . '\preact_author_rest_callback',
 	];
