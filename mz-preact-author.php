@@ -31,8 +31,8 @@ function enqueue_style( $name, $deps = [] ) {
 }
 
 function install() {
-	add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
-	add_filter( 'the_content', 'insert_author_box' );
+	\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . 'enqueue_assets' );
+	\add_filter( 'the_content', __NAMESPACE__ . 'insert_author_box' );
 }
 
 function enqueue_assets() {
